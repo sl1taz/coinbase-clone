@@ -26,7 +26,7 @@ export const token = {
     {
       name: "logo",
       title: "Logo",
-      type: "string",
+      type: "image",
     },
   ],
 };
