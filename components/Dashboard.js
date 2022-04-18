@@ -1,4 +1,5 @@
 import Header from "./Header";
+import Main from "./Main";
 
 import styled from "styled-components";
 
@@ -8,6 +9,7 @@ const Dashboard = () => {
     <Wrapper>
       <MainContainer>
         <Header />
+        <Main />
       </MainContainer>
     </Wrapper>
   );

@@ -1,9 +1,9 @@
-import btcLogo from "../assets/btc.png";
-import maticLogo from "../assets/matic.png";
-import dogeLogo from "../assets/doge.png";
-import ethLogo from "../assets/eth.png";
-import lunaLogo from "../assets/luna.png";
-import solLogo from "../assets/sol.png";
+import btcLogo from '../images/btc.png';
+import maticLogo from '../images/matic.png';
+import dogeLogo from '../images/doge.png';
+import ethLogo from '../images/eth.png';
+import lunaLogo from '../images/luna.png';
+import solLogo from '../images/sol.png';
 
 
 export const coins = [
@@ -58,7 +58,7 @@ export const coins = [
     allocation: 17.89,
   },
   {
-    name: "Dogecoin 🌙",
+    name: "Dogecoin",
     sign: "DOGE",
     logo: dogeLogo,
     balanceUsd: 1.2,
