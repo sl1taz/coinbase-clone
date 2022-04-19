@@ -1,4 +1,5 @@
 import Portfolio from "./Portfolio";
+import Promos from "./Promos";
 
 import styled from 'styled-components';
 
@@ -7,6 +8,7 @@ const Main = () => {
   return (
     <Wrapper>
       <Portfolio />
+      <Promos />
     </Wrapper>
   );
 };
