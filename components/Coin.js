@@ -74,7 +74,6 @@ const CoinIcon = styled.div`
 
 const Primary = styled.div`
   margin-bottom: 0.1rem;
-  margin-right: 20px;
 `;
 
 const Secondary = styled.div`
