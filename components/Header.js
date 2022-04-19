@@ -1,11 +1,17 @@
 import styled from "styled-components";
 
 
-const Header = () => {
+const Header = ({ walletAddress, connectWallet }) => {
   return (
     <Wrapper>
       <Title>Assets</Title>
       <ButtonsContainer>
+        <WalletLink>
+          <WalletLinkTitle>Wallet Connected</WalletLinkTitle>
+          <WalletAddress>
+            {walletAddress.slice(0, 7)}...{walletAddress.slice(35)}
+          </WalletAddress>
+        </WalletLink>
         <Button style={{ background: "#3773f5", color: "#000" }}>
           Buy / Sell
         </Button>
@@ -17,7 +23,6 @@ const Header = () => {
 
 const Wrapper = styled.div`
   width: calc(100%);
-  /* TRouBLe */
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #282b2f;
   display: flex;
@@ -52,6 +57,7 @@ const WalletLinkTitle = styled.div`
   color: #27ad75;
   font-weight: 600;
 `;
+
 const WalletAddress = styled.div`
   font-size: 0.8rem;
   /* color: #8a919e; */

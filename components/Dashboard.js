@@ -6,12 +6,12 @@ import Sidebar from "./Sidebar";
 import styled from "styled-components";
 
 
-const Dashboard = () => {
+const Dashboard = ({ address }) => {
   return (
     <Wrapper>
       <Sidebar />
       <MainContainer>
-        <Header />
+        <Header walletAddress={address} />
         <Main />
       </MainContainer>
     </Wrapper>
