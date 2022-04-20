@@ -19,7 +19,7 @@ const Coin = ({ coin }) => {
             </div>
           </NameCol>
         </div>
-        <div>
+        <div style={{ flex: 2 }}>
           <Primary>
             {"$"}
             {coin.balanceUsd}
@@ -28,7 +28,7 @@ const Coin = ({ coin }) => {
             {coin.balanceCoin} {coin.sign}
           </Secondary>
         </div>
-        <div style={{ flex: 2 }}>
+        <div style={{ flex: 1 }}>
           <Primary>
             {"$"}
             {coin.priceUsd}
@@ -46,6 +46,8 @@ const Coin = ({ coin }) => {
     </Wrapper>
   );
 };
+
+export default Coin;
 
 const Wrapper = styled.div`
   display: flex;
@@ -79,7 +81,4 @@ const Primary = styled.div`
 const Secondary = styled.div`
   color: #8a919e;
   font-size: 0.8rem;
-  margin-right: 20px;
 `;
-
-export default Coin;
