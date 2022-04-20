@@ -2,13 +2,28 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { coins } from "../assets/js/coins";
 
 import styled from "styled-components";
+
 import Coin from "./Coin";
+import BalanceChart from "./BalanceChart";
 
 
 const Portfolio = () => {
   return (
     <Wrapper>
       <Content>
+        <Chart>
+          <div>
+            <Balance>
+              <BalanceTitle>Portfolio balance</BalanceTitle>
+              <BalanceValue>
+                {"$"}
+                46,000
+                {/* {walletBalance.toLocaleString()} */}
+              </BalanceValue>
+            </Balance>
+          </div>
+          <BalanceChart />
+        </Chart>
         <PortfolioTable>
           <TableItem>
             <Title>Your Assets</Title>
