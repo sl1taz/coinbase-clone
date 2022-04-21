@@ -1,13 +1,37 @@
+import { useState, useEffect } from "react";
+
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { coins } from "../assets/js/coins";
 
 import styled from "styled-components";
 
-import Coin from "./Coin";
 import BalanceChart from "./BalanceChart";
+import Coin from "./Coin";
 
 
-const Portfolio = () => {
+const Portfolio = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
+  const [walletBalance, setWalletBalance] = useState(0);
+
+  const tokenToUSD = {};
+
+
+  for (const token in sanityTokens) {
+    tokenToUSD[token.contractAddress] = Number(token.usdPrice);
+  }
+
+  useEffect(() => {
+    const calculateTotalBalance = async () => {
+      const totalBalance = await Promise.all(
+        thirdWebTokens.map(async (token) => {
+          const balance = await token.balanceOf(walletAddress);
+          return Number(balance.displayValue) * tokenToUSD[token.address];
+        })
+      );
+      setWalletBalance(totalBalance.reduce((acc, curr) => acc + curr, 0));
+    };
+    calculateTotalBalance();
+  }, [thirdWebTokens, sanityTokens]);
+
   return (
     <Wrapper>
       <Content>
@@ -43,10 +67,10 @@ const Portfolio = () => {
             </TableItem>
             <Divider />
             <div>
-              {coins.map((coin) => {
+              {coins.map((coin, index) => {
                 return (
                   <div>
-                    <Coin coin={coin} />
+                    <Coin key={index} coin={coin} />
                     <Divider />
                   </div>
                 );
