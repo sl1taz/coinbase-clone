@@ -23,6 +23,8 @@ const Dashboard = ({ address }) => {
   const [sanityTokens, setSanityTokens] = useState([]);
   const [thirdWebTokens, setThirdWebTokens] = useState([]);
 
+  console.log(sanityTokens);
+
   useEffect(() => {
     const url =
       "https://exkic33q.api.sanity.io/v1/data/query/production?query=*%5B_type%3D%3D'coins'%5D%20%7B%0A%20%20name%2C%0A%20%20usdPrice%2C%0A%20%20contractAddress%2C%0A%20%20symbol%2C%0A%20%20logo%0A%7D";
