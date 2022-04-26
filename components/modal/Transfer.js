@@ -18,7 +18,7 @@ const Transfer = ({
   const [recipient, setRecipient] = useState("");
   const [imageUrl, setImageUrl] = useState(null);
 
-  const [balance, setBalance] = useState("Fetching...");
+  const [balance, setBalance] = useState("Fetching");
   const [activeThirdWebToken, setActiveThirdWebToken] = useState();
 
 
@@ -47,6 +47,7 @@ const Transfer = ({
   }, [activeThirdWebToken]);
 
   const sendCrypto = async (amount, recipient) => {
+    setAction("transferring");
     if (activeThirdWebToken && amount && recipient) {
       const tx = await activeThirdWebToken.transfer(
         recipient,

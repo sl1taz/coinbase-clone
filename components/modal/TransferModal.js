@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import Receive from "./Receive";
 import Transfer from "./Transfer";
 import CoinSelector from "./CoinSelector";
 
@@ -31,6 +32,13 @@ const TransferModal = ({ sanityTokens, thirdWebTokens, walletAddress }) => {
           />
         );
       case "receive":
+        return (
+          <Receive
+            setAction={setAction}
+            selectedToken={selectedToken}
+            walletAddress={walletAddress}
+          />
+        );
       case "select":
         return (
           <CoinSelector
@@ -41,6 +49,40 @@ const TransferModal = ({ sanityTokens, thirdWebTokens, walletAddress }) => {
             thirdWebTokens={thirdWebTokens}
             walletAddress={walletAddress}
           />
+        );
+      case "transferring":
+        return (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "1.5rem",
+            }}
+          >
+            Transfer in progress
+          </div>
+        );
+
+      case "transferred":
+        return (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "2rem",
+              fontWeight: "600",
+              color: "#27ad75",
+            }}
+          >
+            Transfer complete
+          </div>
         );
       default:
         return <h2>Send</h2>;
