@@ -1,7 +1,7 @@
+import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
-import Chart from 'chart.js/auto';
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 
 const data = {
@@ -57,6 +57,6 @@ const BalanceChart = () => {
   );
 };
 
-const Wrapper = styled.div``;
-
 export default BalanceChart;
+
+const Wrapper = styled.div``;
