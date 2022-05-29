@@ -4,7 +4,7 @@ Coinbase clone w/ reactjs, nextjs, sanity, web3 and metamask
 
 ## Tech Stack
 
-**Client:** React, Next JS, Tailwind CSS
+**Client:** React, Next, Styled Components
 
 **Server:** Node, Sanity, Web3, Metamask
 
