@@ -1,6 +1,6 @@
 # Coinbase Clone
 
-Coinbase clone w/ reactjs, nextjs, sanity, web3 and metamask
+Coinbase clone w/ reactjs, nextjs, sanity and metamask
 
 ## Tech Stack
 
